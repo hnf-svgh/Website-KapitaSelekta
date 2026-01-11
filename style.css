@@ -1,0 +1,241 @@
+/* Palet Warna & Font - Tema Biru Tua & Silver */
+:root {
+    /* Menyesuaikan warna tanpa kuning */
+    --primary-color: #007bff; /* Biru muda yang cerah untuk highlight */
+    --secondary-color: #001f3f; /* Biru navy gelap sebagai background */
+    --accent-color: #ffffff; /* Putih bersih untuk teks utama dan aksen */
+    --text-color: #f0f0f0; /* Teks putih terang */
+    --bg-color: #001f3f; /* Latar belakang utama */
+    --box-bg-color: rgba(26, 42, 70, 0.8); /* Latar belakang box semi-transparan */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.8;
+    margin: 0;
+    color: var(--text-color);
+    background-image: url('thewordisflat2.gif'); /* Pastikan ini adalah gambar kode Anda */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+    padding-top: 90px;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 31, 63, 0.85); /* Lapisan navy semi-transparan */
+    z-index: -1;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--accent-color); /* Menggunakan aksen putih untuk judul */
+}
+
+/* Header yang Tetap di Atas */
+.main-header {
+    /* Menggunakan gradasi warna biru yang lebih netral */
+    background: linear-gradient(90deg, #1f4287 0%, #3ca0a0 100%); /* Biru tua dan teal */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Shadow lebih kuat */
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color); /* Border biru cerah */
+    object-fit: cover;
+}
+
+.profile-text h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--text-color); /* Teks putih */
+}
+
+.profile-text p {
+    margin: 0;
+    font-style: italic;
+    color: var(--accent-color); /* Teks putih */
+    opacity: 0.9;
+}
+
+.main-nav a {
+    color: var(--text-color); /* Teks putih */
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 700;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--primary-color); /* Hover biru cerah */
+    transform: translateY(-2px);
+}
+
+/* Tata Letak & Animasi Konten */
+.content-section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    position: relative;
+    color: var(--accent-color); /* Judul bagian tetap putih */
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color); /* Garis bawah judul biru muda */
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.content-box {
+    background: var(--box-bg-color);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.content-box-dark {
+    background: var(--box-bg-color);
+    backdrop-filter: blur(5px);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Tata Letak Halaman "Tentang Saya" */
+.about-me-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.about-me-text {
+    flex: 2;
+}
+
+.about-me-image {
+    flex: 1;
+    text-align: right;
+}
+
+.main-photo {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+    border: 5px solid var(--box-bg-color);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.main-photo:hover {
+    transform: scale(1.05);
+}
+
+/* Latar Belakang "Kekuatan Pendatar Dunia" - Tetap dengan overlay */
+.parallax-bg {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+}
+
+.parallax-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(''); /* Anda bisa ubah ini */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: brightness(0.4) saturate(1.2);
+    z-index: -1;
+}
+
+/* Diagram SWOT */
+.swot-diagram {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 25px;
+}
+
+.swot-box {
+    background: var(--box-bg-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.swot-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 12px 25px rgba(0,0,0,0.5);
+}
+
+.swot-box h3 {
+    text-align: center;
+    margin-top: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+/* Warna border SWOT tetap khas */
+.strength { border-top: 6px solid #2ecc71; }
+.weakness { border-top: 6px solid #e74c3c; }
+.opportunity { border-top: 6px solid #3498db; }
+.threat { border-top: 6px solid #f1c40f; }
+
+/* Footer */
+footer {
+    background: var(--secondary-color);
+    color: var(--accent-color);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
